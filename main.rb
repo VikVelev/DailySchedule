@@ -1,8 +1,15 @@
 #!/usr/bin/ruby -w
 require './engine.rb'
 
-currentDayWord = Time.now.strftime("%A")
+def main()
+    currentDayWord = Time.now.strftime("%A")
 
-if (CheckForSchedule(currentDayWord))
-    puts "Hello"
+    if (CheckForSchedule(currentDayWord))
+        puts "A Schedule for #{currentDayWord} exists"
+        PrintSchedule(currentDayWord)
+    else    
+        CreateSchedule(currentDayWord)
+    end
 end
+
+main()

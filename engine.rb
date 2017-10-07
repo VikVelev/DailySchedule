@@ -1,9 +1,5 @@
 def CheckForSchedule(day)
-    if (File.exist?(day))
-        return true
-    else
-        return false
-    end
+    return File.exist?(day)
 end
 
 def LoadSchedule(day)
@@ -12,22 +8,35 @@ def LoadSchedule(day)
     return schedule
 end
 
-def PrintSchedule(day)
-    schedule = File.open(day, "w")
-    puts schedule
+def PrintSchedule(day)    
+    line_num=0
+    text=File.open(day).read
+    text.gsub!(/\r\n?/, "\n")
+    text.each_line do |line|
+      print "#{line_num += 1}: #{line}"
+    end
 end
 
 def CreateSchedule(day)
     puts "Creating files..."
-    Schedule = File.open(day, "w")
+    creating_schedule = File.open(day, "w")
     
     puts "How many hours do you have today?"
-    hours = gets
+    hours = gets.to_i()
+    
+    if (hours > 0)
+        puts "What are they?"
 
-    puts "What are they?"
+        for i in 0..hours-1
+            print "#{i+1}: "
+            line = gets
+            puts line
+            creating_schedule.puts line
 
-    for i in 0..hours.to_i()-1
-        print "#{i+1}: "
-        Schedule.puts gets
+        end
+    else
+        puts "Wohoo no school on #{day}"
     end
+
+    creating_schedule.close()
 end
