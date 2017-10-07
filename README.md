@@ -9,7 +9,7 @@ ruby
 Installation:
 ```bash
 git clone https://github.com/VikVelev/DailySchedule
-
+#Delete my schedule if you want yours and you aren't from 11th D grade High School of Maths Varna
 ```
 
 How to use:
