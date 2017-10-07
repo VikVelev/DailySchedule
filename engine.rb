@@ -23,7 +23,9 @@ def PrintSchedule(day)
     else
         puts "Wohoo no events on #{day}"
     end
-
+    
+    line_num=0
+    
     schedule_for_printing.each_line do |line|
       print "#{line_num += 1}: #{line}"
     end
