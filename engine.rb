@@ -21,7 +21,7 @@ def PrintSchedule(day)
     if (line_num > 0)
         puts "Your schedule for #{day}:"
     else
-        puts "Wohoo no school on #{day}"
+        puts "Wohoo no events on #{day}"
     end
 
     schedule_for_printing.each_line do |line|
@@ -34,7 +34,7 @@ def CreateSchedule(day)
     puts "Creating file..."
     creating_schedule = File.open(day, "w")
     
-    puts "How many hours do you have today?"
+    puts "How many events do you have today?"
     hours = $stdin.gets.chomp.to_i()
     
     if (hours > 0)
@@ -49,4 +49,9 @@ def CreateSchedule(day)
     end
 
     creating_schedule.close()
+end
+
+def Help()
+    puts "You can type the day of the week as an argument you want to see/create your schedule for."
+    puts "By default it is the current day."
 end
