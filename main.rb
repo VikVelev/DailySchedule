@@ -1,5 +1,5 @@
 #!/usr/bin/ruby -w
-require './engine.rb'
+require '/home/viktorv/Scripts/DailySchedule/engine.rb'
 
 def main()
     currentDay = Time.now.strftime("%A")

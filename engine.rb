@@ -1,15 +1,17 @@
+$directory = "/home/viktorv/Scripts/DailySchedule/"
+
 def CheckForSchedule(day)
-    return File.exist?(day)
+    return File.exist?($directory+day)
 end
 
 def LoadSchedule(day)
     puts "Loading Schedule..."
-    @schedule = File.open(day, "w")
+    schedule = File.open($directory+day, "w")
     return schedule
 end
 
 def PrintSchedule(day)    
-    schedule_for_printing=File.open(day).read
+    schedule_for_printing=File.open($directory+day).read
     schedule_for_printing.gsub!(/\r\n?/, "\n")
 
     line_num=0
@@ -34,7 +36,7 @@ end
 def CreateSchedule(day)
     puts "You have no schedule for #{day}"
     puts "Creating file..."
-    creating_schedule = File.open(day, "w")
+    creating_schedule = File.open($directory+day, "w")
     
     puts "How many events do you have today?"
     hours = $stdin.gets.chomp.to_i()
