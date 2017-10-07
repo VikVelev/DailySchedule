@@ -3,9 +3,12 @@ require './engine.rb'
 
 def main()
     currentDayWord = Time.now.strftime("%A")
-
+    
+    if (ARGV[0] != nil)
+        currentDayWord = ARGV[0]
+    end
+    
     if (CheckForSchedule(currentDayWord))
-        puts "A Schedule for #{currentDayWord} exists"
         PrintSchedule(currentDayWord)
     else    
         CreateSchedule(currentDayWord)
