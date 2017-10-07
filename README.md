@@ -17,5 +17,9 @@ How to use:
 #Navigate to the folder where you cloned it.
 cd DailySchedule
 #run the script, by default it runs for the current day unless you specify.
-ruby main.rb day_of_week
+ruby main.rb #day_of_week#
+#The main idea is this to run when your terminal starts, so to do that you need to add the following line to the .bashrc file
+ruby $HOME/***directory where you cloned it***/DailySchedule/main.rb
+#or just run the following
+echo "ruby $HOME/***directory where you cloned it***/DailySchedule/main.rb" >> $HOME/.bashrc
 ```

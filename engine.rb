@@ -23,7 +23,7 @@ def PrintSchedule(day)
     else
         puts "Wohoo no events on #{day}"
     end
-    
+
     line_num=0
     
     schedule_for_printing.each_line do |line|
@@ -32,7 +32,7 @@ def PrintSchedule(day)
 end
 
 def CreateSchedule(day)
-    
+    puts "You have no schedule for #{day}"
     puts "Creating file..."
     creating_schedule = File.open(day, "w")
     
