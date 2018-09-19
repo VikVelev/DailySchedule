@@ -1,8 +1,10 @@
 #!/usr/bin/ruby -w
 require '/home/viktorv/Scripts/DailySchedule/engine.rb'
+require 'date'
 
 def main()
-    currentDay = Time.now.strftime("%A")
+    time = Date.today
+    currentDay = time.strftime("%A")
 
     if (ARGV[0] == "help")
         Help()
