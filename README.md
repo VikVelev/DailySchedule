@@ -1,5 +1,5 @@
 # DailySchedule
-A Ruby Script which lets you create schedules for a chosen day.
+A Ruby Script which lets you create schedules for a chosen day. Did this as a basic begining practice with Ruby.
 
 Dependencies:
 ```bash
