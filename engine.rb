@@ -57,5 +57,7 @@ end
 
 def Help()
     puts "You can type the day of the week as an argument you want to see/create your schedule for."
+    puts "You can type also tomorrow or yesterday."
     puts "By default it is the current day."
+    puts "Everything is case insensitive."
 end
