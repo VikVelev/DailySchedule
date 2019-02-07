@@ -4,30 +4,27 @@ require 'date'
 require 'titleize'
 
 def main()
-    today = Date.today().strftime("%A")
-    tomorrow = (Date.today() + 1).strftime("%A")
-    yesterday = (Date.today() - 1).strftime("%A")
+    args = {
+        "tomorrow" => (Date.today() + 1).strftime("%A"), 
+        "today" => Date.today().strftime("%A"), 
+        "yesterday" => (Date.today() - 1).strftime("%A")
+    }
 
 
     if (ARGV[0] == "help")
         Help()
     else
-        query = today
+        query = args["today"]
         
         if (ARGV[0] != nil)
             query = ARGV[0].downcase.titleize
 
-            if (ARGV[0].downcase == "tomorrow")
-                query = tomorrow
+            args.each do |key, element|
+                if (ARGV[0] == key)
+                    query = element
+                end
             end
 
-            if (ARGV[0].downcase == "today")
-                query = today
-            end
-
-            if (ARGV[0].downcase == "yesterday")
-                query = yesterday
-            end
         end
 
         if (CheckForSchedule(query))
